@@ -9,5 +9,7 @@ public class HelloWorld {
         Scanner in = new Scanner(System.in);
         name =  in.nextLine();
         System.out.println(name);
+        int x = 0;
+        System.out.println(x);
     }
 }
