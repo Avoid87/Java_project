@@ -1,5 +1,5 @@
 package Lesson1;
-
+//Типы переменных
 public class Variables {
     public static void main(String[] args) {
         int a; //Декларация переменной (место в памяти)
