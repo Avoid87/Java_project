@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fe3c5909-56e0-44dd-a6d3-cbc29d4d210f" name="Changes" comment="Variables">
-      <change afterPath="$PROJECT_DIR$/Lesson1/While.java" afterDir="false" />
+    <list default="true" id="fe3c5909-56e0-44dd-a6d3-cbc29d4d210f" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change afterPath="$PROJECT_DIR$/Lesson1/Array.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lesson1/SwitchCaseEx.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson1/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lesson1/HelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson1/Variables.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lesson1/Variables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java_project/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java_project/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java_project/Lesson1/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java_project/Lesson1/HelloWorld.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +41,35 @@
     "last_opened_file_path": "D:/TEST/Java/Java_project"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.While">
+  <component name="RunManager" selected="Application.SwitchCaseEx">
+    <configuration name="Array" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lesson1.Array" />
+      <module name="Java_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lesson1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Lesson1.HelloWorld" />
+      <module name="Java_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lesson1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SwitchCaseEx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lesson1.SwitchCaseEx" />
       <module name="Java_project" />
       <extension name="coverage">
         <pattern>
@@ -73,6 +96,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SwitchCaseEx" />
+        <item itemvalue="Application.Array" />
         <item itemvalue="Application.While" />
         <item itemvalue="Application.HelloWorld" />
       </list>
@@ -150,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1732696371063</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1732865703166</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732865703166</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,7 +199,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start 24/11/24" />
     <MESSAGE value="First_Hello" />
+    <MESSAGE value="Loop" />
     <MESSAGE value="Variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="Variables" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
 </project>
