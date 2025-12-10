@@ -1,13 +1,21 @@
+import java.util.Objects;
+
 public class Book {
+    private String title;
+    private String author;
+    private String isnb;
+    private Genre genre;
 
-   private String title;
-   private String author;
-   private String id;
+    public static int bookCount = 0;
 
-    public Book(String title, String author, String id) {
+
+    public Book(String title, String author, String isnb, Genre genre) {
         this.title = title;
-        this.author =author;
-        this.id = id;
+        this.author = author;
+        this.isnb = isnb;
+        this.genre = genre;
+
+        bookCount = ++ bookCount;
     }
 
     public String getTitle() {
@@ -17,16 +25,34 @@ public class Book {
     public String getAuthor() {
         return author;
     }
-    public String getId() {
-        String isnb = id;
+
+    public String getIsnb() {
         return isnb;
     }
-
-    public void displayInfo(){
-        System.out.println("Title: " + title + ", " + "Author: " + author + ", " + "Id: " + id);
+    public Genre getGenre(){
+        return genre;
     }
-    /*@Override
-    public String toString() { // Переопределяем для понятного вывода
-        return "Title:" + title + ", Author:" + author + ", Id:" + id;
-    }*/
+
+    public void getBookCount(){
+        System.out.println("Книг добавлено в количестве " + bookCount + " шт");
+    }
+
+    public void displayInfo() {
+        System.out.println("Книга: " + title + ", Автор: " + author + ", Isnb: " + isnb + ", Жанр: " + genre);
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(title, book.title) && Objects.equals(author, book.author) && Objects.equals(isnb, book.isnb);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, isnb);
+    }
+
 }

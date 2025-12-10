@@ -1,39 +1,89 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Library {
-
-    List <Book> books = new ArrayList<>();
-
+    Set<Book> books;
     public Library() {
+        this.books = new HashSet<>();
     }
 
-    void addBook(Book book){
+    public void addBook(Book book) {
         books.add(book);
     }
-    void removeBookByIsnb(String isnb){
-        for (Book del: books) {
-            if (del.getId() == isnb){
-                books.remove(del);
-                break;
-            }
-        }
-    }
-    void displayAllBook(){
-        for (Book show: books) {
-            show.displayInfo();
-        }
 
-    }
-    Book findBookById(String isnb){
-       for (Book findIsnb : books) {
-            if (findIsnb.getId() == isnb){
-                findIsnb.displayInfo();
+    public void removeBookByIsnb(String isnb)  {
+        for (Book deleteBookInList : books) {
+            if (deleteBookInList.getIsnb().equals(isnb)) {
+                books.remove(deleteBookInList);
                 break;
             }
+            else {
+                try {
+                    throw new BookNotFoundException();
+                } catch (BookNotFoundException e) {
+                    System.out.println("Данного ISNB не обнаружено в библиотеке");
+                }
+                break;
             }
-        return null;
         }
+    }
+
+    public void displayAllBook() {
+        for (Book showAllBookInList : books) {
+            showAllBookInList.displayInfo();
+        }
+    }
+
+    public Book findBookById(String isnb) {
+        for (Book findBookByIsnb : books) {
+            if (findBookByIsnb.getIsnb().equals(isnb)) {
+                findBookByIsnb.displayInfo();
+                break;
+            }
+            else {
+                try {
+                    throw new BookNotFoundException();
+                } catch (BookNotFoundException e) {
+                    System.out.println("Данного ISNB не обнаружено в библиотеке");
+                }
+                break;
+            }
+        }
+        return null;
+    }
+
+    public Book findBookBySearch(String search) {
+        for (Book findBookBySearch: books) {
+            if(findBookBySearch.getTitle().contains(search)){
+                findBookBySearch.displayInfo();
+                break;
+            }
+            else if (findBookBySearch.getAuthor().contains(search)) {
+                findBookBySearch.displayInfo();
+                break;
+            }
+            else {
+                try {
+                    throw new BookNotFoundException();
+                } catch (BookNotFoundException e) {
+                    System.out.println("Данной книги не обнаружено в библиотеке");
+                }
+                break;
+            }
+        }
+        return null;
+    }
+
+    public Book findBookByGenre(Genre genre){
+        for(Book searchBookByGenre: books){
+            if (searchBookByGenre.getGenre().equals(genre)) {
+                searchBookByGenre.displayInfo();
+                break;
+            }
+        }
+        return null;
+    }
+
+
 
 }
 
