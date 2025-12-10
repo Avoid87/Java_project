@@ -1,13 +1,13 @@
 public class Book {
 
-   private String title;
-   private String author;
-   private String id;
+    private String title;
+    private String author;
+    private String isnb;
 
-    public Book(String title, String author, String id) {
+    public Book(String title, String author, String isnb) {
         this.title = title;
-        this.author =author;
-        this.id = id;
+        this.author = author;
+        this.isnb = isnb;
     }
 
     public String getTitle() {
@@ -17,13 +17,13 @@ public class Book {
     public String getAuthor() {
         return author;
     }
-    public String getId() {
-        String isnb = id;
+
+    public String getIsnb() {
         return isnb;
     }
 
-    public void displayInfo(){
-        System.out.println("Title: " + title + ", " + "Author: " + author + ", " + "Id: " + id);
+    public void displayInfo() {
+        System.out.println("Title: " + title + ", " + "Author: " + author + ", " + "Isnb: " + isnb);
     }
     /*@Override
     public String toString() { // Переопределяем для понятного вывода
