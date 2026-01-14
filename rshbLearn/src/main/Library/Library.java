@@ -1,7 +1,9 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Library {
     Set<Book> books;
+
     public Library() {
         this.books = new HashSet<>();
     }
@@ -10,13 +12,12 @@ public class Library {
         books.add(book);
     }
 
-    public void removeBookByIsnb(String isnb)  {
+    public void removeBookByIsnb(String isnb) {
         for (Book deleteBookInList : books) {
             if (deleteBookInList.getIsnb().equals(isnb)) {
                 books.remove(deleteBookInList);
                 break;
-            }
-            else {
+            } else {
                 try {
                     throw new BookNotFoundException();
                 } catch (BookNotFoundException e) {
@@ -38,8 +39,7 @@ public class Library {
             if (findBookByIsnb.getIsnb().equals(isnb)) {
                 findBookByIsnb.displayInfo();
                 break;
-            }
-            else {
+            } else {
                 try {
                     throw new BookNotFoundException();
                 } catch (BookNotFoundException e) {
@@ -52,16 +52,14 @@ public class Library {
     }
 
     public Book findBookBySearch(String search) {
-        for (Book findBookBySearch: books) {
-            if(findBookBySearch.getTitle().contains(search)){
+        for (Book findBookBySearch : books) {
+            if (findBookBySearch.getTitle().contains(search)) {
                 findBookBySearch.displayInfo();
                 break;
-            }
-            else if (findBookBySearch.getAuthor().contains(search)) {
+            } else if (findBookBySearch.getAuthor().contains(search)) {
                 findBookBySearch.displayInfo();
                 break;
-            }
-            else {
+            } else {
                 try {
                     throw new BookNotFoundException();
                 } catch (BookNotFoundException e) {
@@ -73,8 +71,8 @@ public class Library {
         return null;
     }
 
-    public Book findBookByGenre(Genre genre){
-        for(Book searchBookByGenre: books){
+    public Book findBookByGenre(Genre genre) {
+        for (Book searchBookByGenre : books) {
             if (searchBookByGenre.getGenre().equals(genre)) {
                 searchBookByGenre.displayInfo();
                 break;
@@ -83,6 +81,27 @@ public class Library {
         return null;
     }
 
+    //Проба StreamAPI
+
+    public void findBookByAuthorWithApi(String author) {
+        List<Book> books1 = books.stream()
+                .filter(book -> book.getAuthor().equals(author))
+                .collect(Collectors.toList());
+        for (Book search : books1
+        ) {
+            search.displayInfo();
+        }
+    }
+
+    public void sortBookByTitleWithApi() {
+        List<Book> books1 = books.stream()
+                .sorted()
+                .collect(Collectors.toList());
+        for (Book sort : books1
+        ) {
+            sort.displayInfo();
+        }
+    }
 
 
 }

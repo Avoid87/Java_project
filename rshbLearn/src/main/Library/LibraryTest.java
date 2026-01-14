@@ -14,10 +14,17 @@ public class LibraryTest {
         library.findBookById("2222-2222");
         library.removeBookByIsnb("2222-2222");
         library.displayAllBook();
+
+        //добвленные методы во втором задании
         library.findBookBySearch("Толст");
         library.findBookByGenre(Genre.HORROR);
 
+        //счетчик
         Book b1 = new Book("Буратино", "Толстой", "4444-4444", Genre.HORROR);
         b1.getBookCount();
+
+        //методы с потоком
+        library.findBookByAuthorWithApi("Толстой");
+        library.sortBookByTitleWithApi();
     }
 }

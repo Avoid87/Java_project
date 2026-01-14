@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Book {
+public class Book implements Comparable<Book> {
     private String title;
     private String author;
     private String isnb;
@@ -15,7 +15,7 @@ public class Book {
         this.isnb = isnb;
         this.genre = genre;
 
-        bookCount = ++ bookCount;
+        bookCount = ++bookCount;
     }
 
     public String getTitle() {
@@ -29,11 +29,12 @@ public class Book {
     public String getIsnb() {
         return isnb;
     }
-    public Genre getGenre(){
+
+    public Genre getGenre() {
         return genre;
     }
 
-    public void getBookCount(){
+    public void getBookCount() {
         System.out.println("Книг добавлено в количестве " + bookCount + " шт");
     }
 
@@ -55,4 +56,8 @@ public class Book {
         return Objects.hash(title, author, isnb);
     }
 
+    @Override
+    public int compareTo(Book o) {
+        return title.compareTo(o.getTitle());
+    }
 }
