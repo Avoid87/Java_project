@@ -54,7 +54,7 @@ public class ManualLibManagement {
                     library.removeBookByIsnb(addIsnb);
 
                 }
-                default ->  {
+                default -> {
                     System.out.println("Вы ввели неверный параметр. Введите 1,2 или 3!\n");
 
                 }
