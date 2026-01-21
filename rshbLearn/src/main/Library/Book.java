@@ -8,7 +8,7 @@ public class Book implements Comparable<Book> {
 
     public static int bookCount = 0;
 
-
+//test
     public Book(String title, String author, String isnb, Genre genre) {
         this.title = title;
         this.author = author;
