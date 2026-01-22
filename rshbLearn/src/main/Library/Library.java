@@ -51,7 +51,7 @@ public class Library {
         return null;
     }
 
-    public Book findBookBySearch(String search) { //раздели этот метод на два, один по части названия, второй по части автора, а то
+    public Book findBookBySearch(String search) {
         for (Book findBookBySearch : books) {
             if (findBookBySearch.getTitle().contains(search)) {
                 findBookBySearch.displayInfo();
@@ -87,31 +87,22 @@ public class Library {
         List<Book> books1 = books.stream()
                 .filter(book -> book.getAuthor().equals(author))
                 .collect(Collectors.toList());
-        for (Book search : books1 //тут скобка уехала, ctrl+alt+L для форматирования можно и даже нужно жать
+        for (Book search : books1
         ) {
             search.displayInfo();
         }
     }
 
     public void sortBookByTitleWithApi() {
-        List<Book> books1 = books.stream() //используй читаемые названия и избегай books1 и тд
-                .sorted() //здесь не понятно, по какому полю сортировка идет
+        List<Book> books1 = books.stream()
+                .sorted()
                 .collect(Collectors.toList());
-        for (Book sort : books1 //тут скобка уехала, ctrl+alt+L для форматирования можно и даже нужно жать
+        for (Book sort : books1
         ) {
             sort.displayInfo();
         }
     }
 
-    //смотри, для всех методов, где работаешь со стримами, можно сделать примерно так:
 
-//    public List<Book> sortBooksByTitle() { здесь у тебя будет возвращаемый тип сразу список книг
-//        return books.stream() тут соответственно сразу возвращаешь свой список books сразу, без создания нового
-//                .sorted(Comparator.comparing(Book::getTitle)) вот тут уже сортировка по полю title, почитай про ::
-//                .collect(Collectors.toList()); тут стандартно
-//    }
-
-//пустоты вот такой тоже избегай
 }
 
-//и такой
