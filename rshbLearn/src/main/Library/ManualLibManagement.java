@@ -45,7 +45,7 @@ public class ManualLibManagement {
                 case 2 -> {
                     System.out.println("Введите название книги, которую хотите найти");
                     addTitle = in.nextLine();
-                    library.findBookBySearch(addTitle);
+                    library.findBookBySearchTitle(addTitle);
 
                 }
                 case 3 -> {

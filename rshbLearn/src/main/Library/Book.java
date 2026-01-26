@@ -1,8 +1,10 @@
 import java.util.Objects;
 
-public class Book implements Comparable<Book> { //зачем тут Comparable?
+public class Book { //fixed) зачем тут Comparable?
+
+
     private String title;
-    //между одиночными обьявлениями полей класса ставим пустую строку, ниже сделал, как надо
+    //(fixed) между одиночными обьявлениями полей класса ставим пустую строку, ниже сделал, как надо
     private String author;
 
     private String isnb;
@@ -17,7 +19,7 @@ public class Book implements Comparable<Book> { //зачем тут Comparable?
         this.isnb = isnb;
         this.genre = genre;
 
-        bookCount = ++bookCount; //тут можно просто  bookCount++;
+        ++bookCount; // (fixed) тут можно просто  bookCount++;
     }
 
     public String getTitle() {
@@ -48,18 +50,23 @@ public class Book implements Comparable<Book> { //зачем тут Comparable?
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Book book = (Book) o;
-        //перед return ставим пустую строчку, если кроме него еще что-то есть в методе
-        return Objects.equals(title, book.title) && Objects.equals(author, book.author) && Objects.equals(isnb, book.isnb);
+
+        if (!Objects.equals(title, book.title)) return false;
+        if (!Objects.equals(author, book.author)) return false;
+        if (!Objects.equals(isnb, book.isnb)) return false;
+        return genre == book.genre;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, author, isnb);
+        int result = title != null ? title.hashCode() : 0;
+        result = 31 * result + (author != null ? author.hashCode() : 0);
+        result = 31 * result + (isnb != null ? isnb.hashCode() : 0);
+        result = 31 * result + (genre != null ? genre.hashCode() : 0);
+        return result;
     }
 
-    @Override
-    public int compareTo(Book o) {
-        return title.compareTo(o.getTitle());
-    }
+
 }

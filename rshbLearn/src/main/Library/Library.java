@@ -1,6 +1,7 @@
 import java.util.*;
 import java.util.stream.Collectors;
 
+
 public class Library {
     Set<Book> books;
 
@@ -38,71 +39,74 @@ public class Library {
         for (Book findBookByIsnb : books) {
             if (findBookByIsnb.getIsnb().equals(isnb)) {
                 findBookByIsnb.displayInfo();
-                break;
-            } else {
-                try {
-                    throw new BookNotFoundException();
-                } catch (BookNotFoundException e) {
-                    System.out.println("Данного ISNB не обнаружено в библиотеке");
-                }
-                break;
+                return findBookByIsnb;
             }
+        }
+        try {
+            throw new BookNotFoundException();
+        } catch (BookNotFoundException e) {
+            System.out.println("Данного ISNB не обнаружено в библиотеке");
         }
         return null;
     }
 
-    public Book findBookBySearch(String search) {
-        for (Book findBookBySearch : books) {
-            if (findBookBySearch.getTitle().contains(search)) {
-                findBookBySearch.displayInfo();
-                break;
-            } else if (findBookBySearch.getAuthor().contains(search)) {
-                findBookBySearch.displayInfo();
-                break;
-            } else {
-                try {
-                    throw new BookNotFoundException();
-                } catch (BookNotFoundException e) {
-                    System.out.println("Данной книги не обнаружено в библиотеке");
-                }
-                break;
+    public Book findBookBySearchTitle(String searchTitle) { //(fixed) раздели этот метод на два, один по части названия, второй по части автора, а то
+        for (Book findBook : books) {
+            if (findBook.getTitle().contains(searchTitle)) {
+                findBook.displayInfo();
+                return findBook;
             }
         }
+        try {
+            throw new BookNotFoundException();
+        } catch (BookNotFoundException e) {
+            System.out.println("Данной книги не обнаружено в библиотеке");
+        }
+
         return null;
     }
 
-    public Book findBookByGenre(Genre genre) {
+    public Book findBookBySearchAuthor(String searchAuthor) {
+        for (Book findBookBySearchAuthor : books) {
+            if (findBookBySearchAuthor.getAuthor().contains(searchAuthor)) {
+                findBookBySearchAuthor.displayInfo();
+                return findBookBySearchAuthor;
+            }
+        }
+        try {
+            throw new BookNotFoundException();
+        } catch (BookNotFoundException e) {
+            System.out.println("Данной книги не обнаружено в библиотеке");
+        }
+
+        return null;
+    }
+
+    public Book findBookByGenre(Genre genreFind) {
         for (Book searchBookByGenre : books) {
-            if (searchBookByGenre.getGenre().equals(genre)) {
+            if (searchBookByGenre.getGenre().equals(genreFind)) {
                 searchBookByGenre.displayInfo();
                 break;
             }
         }
+
         return null;
     }
 
     //Проба StreamAPI
 
     public void findBookByAuthorWithApi(String author) {
-        List<Book> books1 = books.stream()
+        books.stream()
                 .filter(book -> book.getAuthor().equals(author))
-                .collect(Collectors.toList());
-        for (Book search : books1
-        ) {
-            search.displayInfo();
-        }
+                .collect(Collectors.toList())
+                .forEach(Book::displayInfo);
     }
 
     public void sortBookByTitleWithApi() {
-        List<Book> books1 = books.stream()
-                .sorted()
-                .collect(Collectors.toList());
-        for (Book sort : books1
-        ) {
-            sort.displayInfo();
-        }
+        books.stream()
+                .sorted(Comparator.comparing(Book::getTitle))
+                .collect(Collectors.toList())
+                .forEach(Book::displayInfo);
     }
-
-
 }
 
