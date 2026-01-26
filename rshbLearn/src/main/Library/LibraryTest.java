@@ -10,13 +10,14 @@ public class LibraryTest {
         library.addBook(new Book("Отцы и дети", "Тургенев", "2222-2222", Genre.FANTASY));
         library.addBook(new Book("Дагон", "Лавкрафт", "3333-3333", Genre.HORROR));
         library.addBook(new Book("Дагон", "Лавкрафт", "3333-3333", Genre.HORROR));
-        library.displayAllBook();
+       /* library.displayAllBook();
         library.findBookById("2222-2222");
         library.removeBookByIsnb("2222-2222");
-        library.displayAllBook();
+        library.displayAllBook();*/
 
         //добвленные методы во втором задании
-        library.findBookBySearch("Толст");
+        library.findBookBySearchAuthor("Толст");
+        library.findBookBySearchTitle("Войн");
         library.findBookByGenre(Genre.HORROR);
 
         //счетчик
@@ -28,3 +29,4 @@ public class LibraryTest {
         library.sortBookByTitleWithApi();
     }
 }
+//test
