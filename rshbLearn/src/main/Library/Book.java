@@ -2,7 +2,6 @@ import java.util.Objects;
 
 public class Book { //fixed) зачем тут Comparable?
 
-
     private String title;
     //(fixed) между одиночными обьявлениями полей класса ставим пустую строку, ниже сделал, как надо
     private String author;
@@ -50,23 +49,12 @@ public class Book { //fixed) зачем тут Comparable?
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Book book = (Book) o;
-
-        if (!Objects.equals(title, book.title)) return false;
-        if (!Objects.equals(author, book.author)) return false;
-        if (!Objects.equals(isnb, book.isnb)) return false;
-        return genre == book.genre;
+        return Objects.equals(title, book.title) && Objects.equals(author, book.author) && Objects.equals(isnb, book.isnb) && genre == book.genre;
     }
 
     @Override
     public int hashCode() {
-        int result = title != null ? title.hashCode() : 0;
-        result = 31 * result + (author != null ? author.hashCode() : 0);
-        result = 31 * result + (isnb != null ? isnb.hashCode() : 0);
-        result = 31 * result + (genre != null ? genre.hashCode() : 0);
-        return result;
+        return Objects.hash(isnb);
     }
-
-
 }

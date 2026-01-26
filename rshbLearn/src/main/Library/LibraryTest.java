@@ -10,10 +10,10 @@ public class LibraryTest {
         library.addBook(new Book("Отцы и дети", "Тургенев", "2222-2222", Genre.FANTASY));
         library.addBook(new Book("Дагон", "Лавкрафт", "3333-3333", Genre.HORROR));
         library.addBook(new Book("Дагон", "Лавкрафт", "3333-3333", Genre.HORROR));
-       /* library.displayAllBook();
+        library.displayAllBook();
         library.findBookById("2222-2222");
         library.removeBookByIsnb("2222-2222");
-        library.displayAllBook();*/
+        library.displayAllBook();
 
         //добвленные методы во втором задании
         library.findBookBySearchAuthor("Толст");
