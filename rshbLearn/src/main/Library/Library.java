@@ -17,15 +17,12 @@ public class Library {
         for (Book deleteBookInList : books) {
             if (deleteBookInList.getIsnb().equals(isnb)) {
                 books.remove(deleteBookInList);
-                break;
-            } else {
-                try {
-                    throw new BookNotFoundException();
-                } catch (BookNotFoundException e) {
-                    System.out.println("Данного ISNB не обнаружено в библиотеке");
-                }
-                break;
             }
+        }
+        try {
+            throw new BookNotFoundException();
+        } catch (BookNotFoundException e) {
+            System.out.println("Данного ISNB не обнаружено в библиотеке");
         }
     }
 
