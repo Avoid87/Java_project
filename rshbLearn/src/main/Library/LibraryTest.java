@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import javax.print.DocPrintJob;
 
 public class LibraryTest {
 
@@ -6,26 +6,32 @@ public class LibraryTest {
 
         Library library = new Library();
 
-        library.addBook(new Book("Война и мир", "Толстой", "1111-1111", Genre.DRAMA));
-        library.addBook(new Book("Отцы и дети", "Тургенев", "2222-2222", Genre.FANTASY));
-        library.addBook(new Book("Дагон", "Лавкрафт", "3333-3333", Genre.HORROR));
-        library.addBook(new Book("Дагон", "Лавкрафт", "3333-3333", Genre.HORROR));
+        //добавление книг
+        library.addBook(new Book("Война и мир", "Толстой", "1111-1111", EGenre.DRAMA));
+        library.addBook(new Book("Отцы и дети", "Тургенев", "2222-2222", EGenre.FANTASY));
+        library.addBook(new Book("Дагон", "Лавкрафт", "3333-3333", EGenre.HORROR));
+        library.addBook(new Book("Дагон", "Лавкрафт", "3333-3333", EGenre.HORROR));
+        library.addBook(new Book("Война и мир","Толстой", "4444-4444", EGenre.DRAMA));
+
+        //вывод книг
         library.displayAllBook();
-        library.findBookById("2222-2222");
+
+        /* library.findBookById("2222-2222");
         library.removeBookByIsnb("2222-2222");
-        library.displayAllBook();
+        library.displayAllBook(); */
 
         //добвленные методы во втором задании
         library.findBookBySearchAuthor("Толст");
         library.findBookBySearchTitle("Войн");
-        library.findBookByGenre(Genre.HORROR);
+        library.findBookByGenre(EGenre.HORROR);
 
         //счетчик
-        Book b1 = new Book("Буратино", "Толстой", "4444-4444", Genre.HORROR);
+        Book b1 = new Book("Буратино", "Толстой", "4444-4444", EGenre.HORROR);
         b1.getBookCount();
 
         //методы с потоком
         library.findBookByAuthorWithApi("Толстой");
+
         library.sortBookByTitleWithApi();
     }
 }

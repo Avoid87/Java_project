@@ -8,15 +8,15 @@ public class Book { //fixed) зачем тут Comparable?
 
     private String isnb;
 
-    private Genre genre;
+    private EGenre egenre;
 
     public static int bookCount = 0;
 
-    public Book(String title, String author, String isnb, Genre genre) {
+    public Book(String title, String author, String isnb, EGenre egenre) {
         this.title = title;
         this.author = author;
         this.isnb = isnb;
-        this.genre = genre;
+        this.egenre = egenre;
 
         ++bookCount; // (fixed) тут можно просто  bookCount++;
     }
@@ -33,8 +33,8 @@ public class Book { //fixed) зачем тут Comparable?
         return isnb;
     }
 
-    public Genre getGenre() {
-        return genre;
+    public EGenre getGenre() {
+        return egenre;
     }
 
     public void getBookCount() {
@@ -42,7 +42,7 @@ public class Book { //fixed) зачем тут Comparable?
     }
 
     public void displayInfo() {
-        System.out.println("Книга: " + title + ", Автор: " + author + ", Isnb: " + isnb + ", Жанр: " + genre);
+        System.out.println("Книга: " + title + ", Автор: " + author + ", Isnb: " + isnb + ", Жанр: " + egenre);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class Book { //fixed) зачем тут Comparable?
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return Objects.equals(title, book.title) && Objects.equals(author, book.author) && Objects.equals(isnb, book.isnb) && genre == book.genre;
+        return Objects.equals(isnb, book.isnb);
     }
 
     @Override

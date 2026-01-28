@@ -1,4 +1,4 @@
-public enum Genre {
+public enum EGenre {
     HORROR,
     FANTASY,
     DRAMA;
