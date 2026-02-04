@@ -8,7 +8,7 @@ public class Book { //fixed) зачем тут Comparable?
 
     private String isnb;
 
-    private EGenre egenre;
+    private EGenre genre;
 
     public static int bookCount = 0;
 
@@ -16,7 +16,7 @@ public class Book { //fixed) зачем тут Comparable?
         this.title = title;
         this.author = author;
         this.isnb = isnb;
-        this.egenre = egenre;
+        this.genre = egenre;
 
         ++bookCount; // (fixed) тут можно просто  bookCount++;
     }
@@ -34,7 +34,7 @@ public class Book { //fixed) зачем тут Comparable?
     }
 
     public EGenre getGenre() {
-        return egenre;
+        return genre;
     }
 
     public void getBookCount() {
@@ -42,7 +42,7 @@ public class Book { //fixed) зачем тут Comparable?
     }
 
     public void displayInfo() {
-        System.out.println("Книга: " + title + ", Автор: " + author + ", Isnb: " + isnb + ", Жанр: " + egenre);
+        System.out.println("Книга: " + title + ", Автор: " + author + ", Isnb: " + isnb + ", Жанр: " + genre);
     }
 
     @Override

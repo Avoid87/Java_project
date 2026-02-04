@@ -79,9 +79,9 @@ public class Library {
         return null;
     }
 
-    public Book findBookByGenre(EGenre EGenreFind) {
+    public Book findBookByGenre(EGenre GenreFind) {
         for (Book searchBookByGenre : books) {
-            if (searchBookByGenre.getGenre().equals(EGenreFind)) {
+            if (searchBookByGenre.getGenre().equals(GenreFind)) {
                 searchBookByGenre.displayInfo();
                 break;
             }
