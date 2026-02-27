@@ -1,21 +1,24 @@
 import java.util.Objects;
 
-public class Book implements Comparable<Book> {
+public class Book { //fixed) зачем тут Comparable?
+
     private String title;
+    //(fixed) между одиночными обьявлениями полей класса ставим пустую строку, ниже сделал, как надо
     private String author;
+
     private String isnb;
-    private Genre genre;
+
+    private EGenre genre;
 
     public static int bookCount = 0;
 
-
-    public Book(String title, String author, String isnb, Genre genre) {
+    public Book(String title, String author, String isnb, EGenre egenre) {
         this.title = title;
         this.author = author;
         this.isnb = isnb;
-        this.genre = genre;
+        this.genre = egenre;
 
-        bookCount = ++bookCount;
+        ++bookCount; // (fixed) тут можно просто  bookCount++;
     }
 
     public String getTitle() {
@@ -30,7 +33,7 @@ public class Book implements Comparable<Book> {
         return isnb;
     }
 
-    public Genre getGenre() {
+    public EGenre getGenre() {
         return genre;
     }
 
@@ -42,22 +45,16 @@ public class Book implements Comparable<Book> {
         System.out.println("Книга: " + title + ", Автор: " + author + ", Isnb: " + isnb + ", Жанр: " + genre);
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return Objects.equals(title, book.title) && Objects.equals(author, book.author) && Objects.equals(isnb, book.isnb);
+        return Objects.equals(isnb, book.isnb);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, author, isnb);
-    }
-
-    @Override
-    public int compareTo(Book o) {
-        return title.compareTo(o.getTitle());
+        return Objects.hash(isnb);
     }
 }

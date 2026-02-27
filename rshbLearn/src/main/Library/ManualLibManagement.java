@@ -7,7 +7,7 @@ public class ManualLibManagement {
         Scanner in = new Scanner(System.in);
 
         String addIsnb, addAuthor, addTitle;
-        Genre addGenre = null;
+        EGenre addEGenre = null;
         int j = 0, i = 0;
 
         while (true) {
@@ -32,20 +32,20 @@ public class ManualLibManagement {
                         System.out.println("Выберите жанр из списка:\n" + "1-HORROR,\n" + "2-FANTASY,\n" + "3-DRAMA");
                         j = in.nextInt();
                         switch (j) {
-                            case 1 -> addGenre = Genre.HORROR;
-                            case 2 -> addGenre = Genre.FANTASY;
-                            case 3 -> addGenre = Genre.DRAMA;
+                            case 1 -> addEGenre = EGenre.HORROR;
+                            case 2 -> addEGenre = EGenre.FANTASY;
+                            case 3 -> addEGenre = EGenre.DRAMA;
                             default -> System.out.println("Такой жанр не существует");
                         }
                     }
                     j = 0;
-                    library.addBook(new Book(addTitle, addAuthor, addIsnb, addGenre));
+                    library.addBook(new Book(addTitle, addAuthor, addIsnb, addEGenre));
 
                 }
                 case 2 -> {
                     System.out.println("Введите название книги, которую хотите найти");
                     addTitle = in.nextLine();
-                    library.findBookBySearch(addTitle);
+                    library.findBookBySearchTitle(addTitle);
 
                 }
                 case 3 -> {
@@ -62,3 +62,4 @@ public class ManualLibManagement {
         }
     }
 }
+//test

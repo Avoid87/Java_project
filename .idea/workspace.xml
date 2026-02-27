@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe3c5909-56e0-44dd-a6d3-cbc29d4d210f" name="Changes" comment="array_2">
-      <change afterPath="$PROJECT_DIR$/Lesson1/ClassesAndObjects.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lesson1/ClassesAndObjectsL2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fe3c5909-56e0-44dd-a6d3-cbc29d4d210f" name="Changes" comment="array_2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,13 +18,23 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": -1
+}]]></component>
   <component name="ProjectId" id="2pI7sA7Od8J1bOvfnIoT9zBBUyZ" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -37,6 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "java__first",
     "jdk.selected.JAVA_MODULE": "openjdk-23",
     "last_opened_file_path": "D:/TEST/Java/Projects/Test_run"
   }
@@ -217,7 +227,47 @@
       <option name="project" value="LOCAL" />
       <updated>1733234324509</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="array_2">
+      <option name="closed" value="true" />
+      <created>1768929614540</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1768929614540</updated>
+    </task>
+    <task id="LOCAL-00015" summary="array_2">
+      <option name="closed" value="true" />
+      <created>1768984101787</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1768984101787</updated>
+    </task>
+    <task id="LOCAL-00016" summary="array_2">
+      <option name="closed" value="true" />
+      <created>1768984151003</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1768984151003</updated>
+    </task>
+    <task id="LOCAL-00017" summary="array_2">
+      <option name="closed" value="true" />
+      <created>1768984308666</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1768984308666</updated>
+    </task>
+    <task id="LOCAL-00018" summary="array_2">
+      <option name="closed" value="true" />
+      <created>1768985142195</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1768985142195</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
